@@ -1,2 +1,83 @@
-# steady-forcing
+﻿# steady-forcing
 Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion
+
+Steady-Forcing is a dual-memory framework for fixed-camera nature-flow video generation. It balances stability and motion to sustain high background persistence and continuous fluid dynamics over multi-minute horizons.
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2606.7661673">
+    <img src="https://img.shields.io/badge/arXiv-2606.7661673-b31b1b.svg" alt="arXiv">
+  </a>
+  <a href="https://github.com/minar09/steady-forcing">
+    <img src="https://img.shields.io/badge/Code-GitHub-181717.svg" alt="GitHub">
+  </a>
+  <a href="https://www.huggingface.co/models/minar09/Steady-Forcing-T2V-1.3B">
+    <img src="https://img.shields.io/badge/Model-Hugging%20Face-orange.svg" alt="Hugging Face">
+  </a>
+</p>
+
+## Authors
+- Matiur Rahman Minar<sup>1</sup>
+- Seunghun Oh<sup>2</sup>
+- Ganghyeon Jeong<sup>2</sup>
+- Unsang Park<sup>1,2</sup>
+
+<sup>1</sup>Department of Computer Science and Engineering, Sogang University
+
+<sup>2</sup>Department of Artificial Intelligence, Sogang University
+
+---
+
+## Overview
+Steady-Forcing produces long-horizon nature video rollouts from a fixed-camera view. It decouples spatial persistence from motion continuity via a structural dual-memory protocol. This enables stable backgrounds and sustained fluid motion.
+
+## Requirements
+- Nvidia GPU with at least 24 GB memory (tested on NVIDIA A100 with 80 GB VRAM)
+- Linux operating system
+
+Other hardware may work but has not been tested.
+
+## Installation
+Create a Python 3.10 environment, install dependencies, and download models:
+
+```bash
+bash setup_env.sh
+```
+
+## Inference
+Run inference with the provided script:
+
+```bash
+bash inference.sh
+```
+
+## Training
+The repository can also be used for training and evaluation.
+
+### Download text prompts and ODE initialization checkpoint
+```bash
+hf download minar09/Steady-Forcing-T2V-1.3B --local-dir ../ckpt
+```
+
+> Note: The training algorithm (except for the GAN version) is data-free; no video data is needed.
+
+### Self-Forcing training with DMD
+```bash
+bash train.sh
+```
+
+This training recipe was completed in under 67 hours on 8 A100 GPUs.
+
+## Citation
+If you use this codebase, please cite:
+
+```bibtex
+@article{minar2025steady,
+  title={Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion},
+  author={Minar, Matiur Rahman and Oh, Seunghun and Jeong, Ganghyeon and Park, Unsang},
+  journal={arXiv preprint arXiv:2606.7661673},
+  year={2026}
+}
+```
+
+## Acknowledgements
+This project builds on the open-source [Infinity-RoPE](https://github.com/yesiltepe-hidir/infinity-rope) and [Reward-Forcing](https://github.com/JaydenLyh/Reward-Forcing) implementation and acknowledges related work in long-horizon video diffusion, motion continuity, and spatial persistence.
