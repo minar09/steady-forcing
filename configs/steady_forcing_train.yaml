@@ -1,0 +1,75 @@
+generator_ckpt: ../ckpt/rewardforcing.pt
+generator_fsdp_wrap_strategy: size
+real_score_fsdp_wrap_strategy: size
+fake_score_fsdp_wrap_strategy: size
+real_name: Wan2.1-T2V-14B        # use 14B teacher — 8 GPUs can now shard it properly maybe
+text_encoder_fsdp_wrap_strategy: size
+denoising_step_list:
+- 1000
+- 750
+- 500
+- 250
+warp_denoising_step: true # need to remove - 0 in denoising_step_list if warp_denoising_step is true
+ts_schedule: false
+num_train_timestep: 1000
+timestep_shift: 5.0
+guidance_scale: 5.0
+denoising_loss_type: flow
+mixed_precision: true
+seed: 0
+wandb_host: WANDB_HOST
+wandb_key: WANDB_KEY
+wandb_entity: WANDB_ENTITY
+wandb_project: WANDB_PROJECT
+sharding_strategy: hybrid_full
+lr: 2.0e-06
+lr_critic: 4.0e-07
+beta1: 0.0
+beta2: 0.999
+beta1_critic: 0.0
+beta2_critic: 0.999
+data_path: prompts/steady/static_nature_prompts_train_gaps.txt
+ema_weight: 0.99
+ema_start_step: 200
+batch_size: 1           # per-GPU batch (standard for 80GB with 14B teacher)
+total_batch_size: 8    # 8 GPUs × 1 = 8
+log_iters: 500
+negative_prompt: '色调艳丽，过曝，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走, solid water, metallic water, water stagnation, color drift, water flow drift, water color drift, water surface drift, scene drift, background drift, frozen motion, camera movement, zooming, panning, camera drift, visual artifacts, camera, tripod,  ground artifacts, anomalous textures, unrealistic round shaped pattern, localized distortions, unnatural water, unnatural waves, unnatural flow, unnatural motion, unnatural physics, unnatural dynamics, unnatural fluidity, unnatural surface, unnatural reflections, unnatural refractions, unnatural transparency, unnatural opacity, unnatural viscosity, unnatural turbulence, unnatural splashes, unnatural ripples, unnatural foam, unnatural spray, unnatural mist, unnatural droplets, human, animal, repetitive round textures, pond effects, low dynamic degree, unnatural color, unnatural lighting, unnatural shadows, unnatural highlights, unnatural contrast, unnatural saturation, unnatural hue, unnatural brightness, unnatural darkness, unnatural exposure, unnatural noise, unnatural grain, unnatural blur, unnatural sharpness, unnatural clarity, unnatural detail, unnatural texture, unnatural pattern, unnatural composition'
+dfake_gen_update_ratio: 5
+image_or_video_shape:
+- 1
+- 21
+- 16
+- 60
+- 104
+
+# Re-DMD Specifics
+distribution_loss: dmd    # remove rewardeddmd
+trainer: score_distillation    # remove rewarded_distillation
+beta: 0.5            # Optimal balance between motion and quality [11]
+generator_update_ratio: 5    # Update generator 5 times per 1 critic update [13]
+checkpoint_path: ../ckpt
+
+gradient_checkpointing: true      # safe now — 4 GPUs have headroom, no KV cache conflict in train path
+num_frame_per_block: 3    # 6 for inference, 3 for training to reduce memory
+num_training_frames: 21   # default 21 from the base
+load_raw_video: false
+text_encoder_cpu_offload: true
+
+# additional training tweaks
+context_noise: 0
+gc_interval: 100
+causal: true
+independent_first_frame: false
+same_step_across_blocks: true
+last_step_only: false
+i2v: false
+no_visualize: true
+# full_training_steps: 6000
+
+# For Static Scenery Stability
+model_kwargs:
+  timestep_shift: 5.0
+  sink_size: 3                    # ADD: enable dual-sink during training to align with inference
+  local_attn_size: 21    # 18             # ADD: train with same window used at inference
+  # compression_alpha: 0.99         # ADD: match inference EMA config
