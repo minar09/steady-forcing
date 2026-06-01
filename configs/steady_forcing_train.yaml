@@ -28,7 +28,7 @@ beta1: 0.0
 beta2: 0.999
 beta1_critic: 0.0
 beta2_critic: 0.999
-data_path: prompts/steady/static_nature_prompts_train_gaps.txt
+data_path: prompts/train.txt
 ema_weight: 0.99
 ema_start_step: 200
 batch_size: 1           # per-GPU batch (standard for 80GB with 14B teacher)
