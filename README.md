@@ -10,20 +10,17 @@ Steady-Forcing is a dual-memory framework for fixed-camera nature-flow video gen
   <a href="https://github.com/minar09/steady-forcing">
     <img src="https://img.shields.io/badge/Code-GitHub-181717.svg" alt="GitHub">
   </a>
-  <a href="https://www.huggingface.co/models/minar09/Steady-Forcing-T2V-1.3B">
+  <a href="https://www.huggingface.co/minar09/Steady-Forcing-T2V-1.3B">
     <img src="https://img.shields.io/badge/Model-Hugging%20Face-orange.svg" alt="Hugging Face">
+  </a>
+  <a href="https://minar09.github.io/steadyforcing/">
+    <img src="https://img.shields.io/badge/Project-Page-green" alt="Project Page">
   </a>
 </p>
 
 ## Authors
-- Matiur Rahman Minar<sup>1</sup>
-- Seunghun Oh<sup>2</sup>
-- Ganghyeon Jeong<sup>2</sup>
-- Unsang Park<sup>1,2</sup>
-
-<sup>1</sup>Department of Computer Science and Engineering, Sogang University
-
-<sup>2</sup>Department of Artificial Intelligence, Sogang University
+[Matiur Rahman Minar](https://minar09.github.io/)<sup>1</sup>, [Seunghun Oh](https://owinhun.tistory.com/)<sup>2</sup>, [Ganghyeon Jeong](https://github.com/Jugahy)<sup>2</sup>, [Unsang Park](https://cviplab.sogang.ac.kr/cviplab/1249.html)<sup>1,2</sup>  
+<sup>1</sup>[Department of Computer Science and Engineering, Sogang University](https://ecs.sogang.ac.kr/ecs/index_new.html) &nbsp; <sup>2</sup>[Department of Artificial Intelligence, Sogang University](https://ai.sogang.ac.kr/ai/index_new.html)
 
 ---
 
