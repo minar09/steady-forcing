@@ -52,7 +52,7 @@ The repository can also be used for training and evaluation.
 
 ### Download text prompts and ODE initialization checkpoint
 ```bash
-hf download minar09/Steady-Forcing-T2V-1.3B --local-dir ../ckpt
+hf download minar09/Steady-Forcing-T2V-1.3B --local-dir .
 ```
 
 > Note: The training algorithm (except for the GAN version) is data-free; no video data is needed.

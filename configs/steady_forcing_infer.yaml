@@ -1,4 +1,4 @@
-generator_ckpt: ../ckpt/minar09/Steady-Forcing-T2V-1.3B/steady_forcing_t2v.pt
+generator_ckpt: ./ckpt/minar09/Steady-Forcing-T2V-1.3B/steady_forcing_t2v.pt
 generator_fsdp_wrap_strategy: size
 real_score_fsdp_wrap_strategy: size
 fake_score_fsdp_wrap_strategy: size
