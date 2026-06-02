@@ -73,7 +73,7 @@ bash setup_env.sh
 hf download minar09/Steady-Forcing-T2V-1.3B --local-dir ./ckpt
 ```
 
-> Note: The training algorithm (except for the GAN version) is data-free; no video data is needed.
+> Note: The training algorithm is data-free distillation; no video data is needed.
 
 ### File Structure
 After downloading, organize the checkpoints and prompts as follows:
@@ -105,7 +105,7 @@ This training recipe was completed in under 67 hours on 8 A100 GPUs.
 
 ## 📊 Results
 
-Quantitative and qualitative results are available in the [paper](https://arxiv.org/abs/2606.7661673). For detailed comparisons and visualizations, please refer to the arXiv preprint.
+Quantitative and qualitative results are available in the [paper](https://arxiv.org/abs/2606.7661673). For detailed comparisons and visualizations, please refer to the arXiv preprint. For viewing generated videos, please visit the [project page](https://minar09.github.io/steadyforcing/).
 
 ## 📄 Citation
 
