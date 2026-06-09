@@ -20,7 +20,7 @@
 </div>
 
 ## ✍️ Authors
-[Matiur Rahman Minar](https://minar09.github.io/)<sup>1</sup>, [Seunghun Oh](https://owinhun.tistory.com/)<sup>2</sup>, [Ganghyeon Jeong](https://github.com/Jugahy)<sup>2</sup>, [Unsang Park](https://cviplab.sogang.ac.kr/cviplab/1249.html)<sup>1,2</sup>  
+[Matiur Rahman Minar](https://minar09.github.io/)<sup>1</sup>, [Seunghun Oh](https://owinhun.github.io/)<sup>2</sup>, [Ganghyeon Jeong](https://github.com/Jugahy)<sup>2</sup>, [Unsang Park](https://cviplab.sogang.ac.kr/cviplab/1249.html)<sup>1,2</sup>  
 <sup>1</sup>[Department of Computer Science and Engineering, Sogang University](https://ecs.sogang.ac.kr/ecs/index_new.html) &nbsp; <sup>2</sup>[Department of Artificial Intelligence, Sogang University](https://ai.sogang.ac.kr/ai/index_new.html)
 
 ## 🚀 Progress
