@@ -2,8 +2,8 @@
   <h1>Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion</h1>
   <div>
     <p align="center">
-        <a href="https://arxiv.org/abs/2606.7661673">
-            <img src="https://img.shields.io/badge/arXiv-2606.7661673-b31b1b.svg" alt="arXiv">
+        <a href="https://arxiv.org/abs/2606.14732">
+            <img src="https://img.shields.io/badge/arXiv-2606.14732-b31b1b.svg" alt="arXiv">
         </a>
         <a href="https://github.com/minar09/steady-forcing">
             <img src="https://img.shields.io/badge/Code-GitHub-181717.svg" alt="GitHub">
@@ -105,7 +105,7 @@ This training recipe was completed in under 67 hours on 8 A100 GPUs.
 
 ## 📊 Results
 
-Quantitative and qualitative results are available in the [paper](https://arxiv.org/abs/2606.7661673). For detailed comparisons and visualizations, please refer to the arXiv preprint. For viewing generated videos, please visit the [project page](https://minar09.github.io/steadyforcing/).
+Quantitative and qualitative results are available in the [paper](https://arxiv.org/abs/2606.14732). For detailed comparisons and visualizations, please refer to the arXiv preprint. For viewing generated videos, please visit the [project page](https://minar09.github.io/steadyforcing/).
 
 ## 📄 Citation
 
@@ -115,7 +115,7 @@ If you use this codebase, please cite:
 @article{minar2025steady,
   title={Steady-Forcing: Balancing Spatial Persistence and Motion Continuity in Long-Horizon Nature Video Diffusion},
   author={Minar, Matiur Rahman and Oh, Seunghun and Jeong, Ganghyeon and Park, Unsang},
-  journal={arXiv preprint arXiv:2606.7661673},
+  journal={arXiv preprint arXiv:2606.14732},
   year={2026}
 }
 ```
