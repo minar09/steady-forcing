@@ -25,7 +25,7 @@
 
 ## 🚀 Progress
 
-- [ ] 📝 Technical Report / Paper
+- [x] 📝 Technical Report / Paper
 - [x] 🌐 Project Homepage
 - [x] 💻 Training & Inference Code
 - [x] 🤗 Pretrained Model: T2V-1.3B
@@ -109,7 +109,7 @@ Quantitative and qualitative results are available in the [paper](https://arxiv.
 
 ## 📄 Citation
 
-If you use this codebase, please cite:
+If you use this codebase, please cite our paper:
 
 ```bibtex
 @article{minar2025steady,
